@@ -1,0 +1,40 @@
+Source: geoclue-2.0
+Section: utils
+Priority: optional
+Maintainer: BlankOn Developers <blankon-dev@googlegroups.com>
+XSBC-Original-Maintainer: Laurent Bigonville <bigon@debian.org>
+Uploaders: Craig Andrews <candrews@integralblue.com>
+Build-Depends: debhelper (>= 9),
+               intltool,
+               libgeoip-dev (>= 1.5.1),
+               libglib2.0-dev (>= 2.34.0),
+               libjson-glib-dev (>= 0.14),
+               libsoup2.4-dev,
+               pkg-config
+Homepage: http://www.freedesktop.org/wiki/Software/GeoClue
+Standards-Version: 3.9.4
+Vcs-Git: git://anonscm.debian.org/collab-maint/geoclue.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/geoclue.git
+
+Package: geoclue-2.0
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Geographic information framework
+ GeoClue provides applications access to various geographical information
+ sources using a D-Bus API.
+ .
+ This package contains the master server for GeoClue.
+
+Package: geoclue-2.0-dev
+Architecture: any
+Depends: geoclue-2.0 (= ${binary:Version}),
+         libglib2.0-dev (>= 2.34.0),
+         libjson-glib-dev (>= 0.14),
+         libsoup2.4-dev,
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: Geographic information framework (development files)
+ GeoClue provides applications access to various geographical information
+ sources using a D-Bus API.
+ .
+ This package contains the master server for GeoClue.

@@ -1,0 +1,13 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+CONFIG_FLAGS = --enable-geoip-server
+
+override_dh_auto_configure:
+	dh_auto_configure -- --libexecdir=/usr/lib/geoclue ${CONFIG_FLAGS}
+
+override_dh_auto_test:
+	@echo "TODO: Test suite disabled - requires running dbus daemon, currently fails"
+
+%:
+	dh $@

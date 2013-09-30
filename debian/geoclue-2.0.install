@@ -1,0 +1,4 @@
+etc/dbus-1/system.d/org.freedesktop.GeoClue2.conf
+usr/bin
+usr/lib/geoclue
+usr/share/dbus-1/system-services/org.freedesktop.GeoClue2.service

@@ -1,0 +1,240 @@
+geoclue-2.0 (1.99.3-0blankon1) suroboyo; urgency=low
+
+  * New Upstream Release
+
+  * Sync with Ubuntu :
+    [ Tim Lunn ]
+    * New upstream release, this is a complete rewrite
+    * Adjusted packaging to suit.
+
+    [ Rico Tzschichholz ]
+    * Split package and pull needed development depends
+
+ -- Mahyuddin Idram Ahmad <dotove@di.blankon.in>  Mon, 30 Sep 2013 23:53:58 +0700
+
+geoclue (0.12.99-3) unstable; urgency=low
+
+  * [cf5a5bd4] debian/control: Add Multi-Arch: same for libgeoclue0 package
+  * [df11e930] debian/control: Use canonical URL for the Vcs-* fields
+  * [b6eda579] Always update autotools helper files during build
+  * [52761c89] debian/gbp.conf: Set tarball-dir and export-dir
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 09 Sep 2013 21:43:46 +0200
+
+geoclue (0.12.99-2) unstable; urgency=low
+
+  * [3d2d3dbf] Adopt the package with Bernd blessing
+  * [f2270121] Bump Standards-Version to 3.9.4 (no further changes)
+  * [24cec588] Update the debian/watch file.
+    Thanks to Bart Martens <bartm@debian.org>
+  * [bc11de4e] Recommends geoclue-nominatim instead of geoclue-yahoo
+
+ -- Laurent Bigonville <bigon@debian.org>  Fri, 24 May 2013 00:10:46 +0200
+
+geoclue (0.12.99-1) experimental; urgency=low
+
+  * [feec9810] Switch to experimental branches
+  * [187e0e61] Imported Upstream version 0.12.99
+  * [754f839d] Adjust the build-dependencies
+  * [b9d05053] Bump debhelper compatibility to 9
+  * [48a66a0d] Install geoclue GSettings schemas
+  * [68c959ca] Drop usage of quilt and autotools-dev
+  * [23e47b77] Bump Standards-Version to 3.9.3 (no further changes)
+  * [6f068365] Drop all the patches applied upstream
+
+ -- Laurent Bigonville <bigon@debian.org>  Mon, 13 Aug 2012 02:22:03 +0200
+
+geoclue (0.12.0-4) unstable; urgency=low
+
+  [ Laurent Bigonville ]
+  * [a5d605f9] Bump Standards-Version to 3.9.2 (no further changes)
+  * [e17fbb8f] Add geoclue-nominatim provider
+
+  [ Bernd Zeimetz ]
+  * [6d14937a] Remove gpsd support.
+    geoclue seems to be dead upstream and the gpsd provider needs a rewrite.
+
+ -- Bernd Zeimetz <bzed@debian.org>  Sat, 03 Dec 2011 12:57:49 +0100
+
+geoclue (0.12.0-3) unstable; urgency=low
+
+  [ Evgeni Golov ]
+  * [b29d4e1f] add Provides: geoclue-provider to every provider
+    that makes it possible to depend on "any provider the user wants"
+  * [c78bdd10] don't fetch priv if it's not used, makes gcc-4.6 silent
+    new patch: gcc-4.6-werror.patch (closes: #625340)
+
+ -- Bernd Zeimetz <bzed@debian.org>  Sun, 10 Jul 2011 18:40:59 +0200
+
+geoclue (0.12.0-2) unstable; urgency=low
+
+  [ Bernd Zeimetz ]
+  * [2b4a976e] Fix description of localnet provider.
+  * [bed74bfa] Don't depend on network-manager-dev on hurd. (Closes: #589556)
+
+  [ Laurent Bigonville ]
+  * [73b9d0c0] Do not install .la file anymore (Closes: #586089).
+  * [18402b0a] Fix typo in plazes.com URL (Closes: #584460)
+  * [38d50a05] Make geoclue master package Recommends some backends
+    (Closes: #602833)
+  * [e2562e3e] Wrap {build-}dependencies
+  * [f26f5c75] Add skyhook geocoding backend
+  * [d5e3fb94] Bump Standards-Version to 3.9.1
+  * [8f0bdbda] geoclue-manual shouldn't be in doc section
+  * [fc1af9da] Switch to dpkg-source 3.0 (quilt) format
+  * [2e38ec8c] Use dh_autotools-dev instead of updating
+    config.{sub,guess} manually
+  * [70fa94bd] Build-dep against libnm-glib-dev on linux-any arch
+  * [106e7914] debian/patches/libnm-glib-pc.patch: Fix libnm-glib.pc
+    name
+  * [732f3e4d] debian/patches/autoreconf.patch: Update configure file
+  * [aacbbc7d] debian/rules: Be sure we FTBFS if we miss something
+  * [c2553245] Drop debian/clean, not needed anymore
+  * [db7e1b26] debian/rules: Be sure we never build with connman support
+  * [da40b0c4] Add myself as uploader
+
+ -- Laurent Bigonville <bigon@debian.org>  Thu, 10 Mar 2011 23:53:19 +0100
+
+geoclue (0.12.0-1) unstable; urgency=low
+
+  * [e52a1858] Add ofono-dev as build-dependency.
+  * [f3a4f817] Replace gammu by ofono in the description.
+  * [7fc55dc5] Drop libgammu-dev build-dep.
+  * [1346e6d5] Imported Upstream version 0.12.0 (Closes: #575816)
+  * [224b42d3] Updating patches.
+  * [bee64eb7] Updating symbols file.
+  * [8cb5a919] Reorder dh optionts as specified by the manpage.
+  * [2c8aa421] Switching Maintainer/Uploaders.
+
+ -- Bernd Zeimetz <bzed@debian.org>  Tue, 30 Mar 2010 22:51:42 +0200
+
+geoclue (0.11.1+git20091217-3) unstable; urgency=low
+
+  * [73b81920] Require libgps >= 2.90.1~svn6819 to build. This fixes the
+    ftbfs on mipsel.
+
+ -- Bernd Zeimetz <bzed@debian.org>  Sat, 19 Dec 2009 15:28:25 +0100
+
+geoclue (0.11.1+git20091217-2) unstable; urgency=low
+
+  * [6b0622fc] Don't require network-manager-dev on kfreebsd.
+
+ -- Bernd Zeimetz <bzed@debian.org>  Thu, 17 Dec 2009 21:43:42 +0100
+
+geoclue (0.11.1+git20091217-1) unstable; urgency=low
+
+  * Building from the upstream git directly as there was no release
+    for months now.
+  * Fixing a build issue with the new libgps, requires libgps >= 2.91
+    now as we rely on the non-blocking features of gps_poll.
+    Closes: #560519
+
+ -- Bernd Zeimetz <bzed@debian.org>  Thu, 17 Dec 2009 11:30:59 +0100
+
+geoclue (0.11.1-6) unstable; urgency=low
+
+  * [b5dc4a22] Cleaning up git buildpackage config.
+  * [e2dd0d25] Bump compat to level 7.
+  * [59e22383] Merge branch 'dh'
+  * [80f5bd5a] Adding debian/clean for dh_clean, drop extra rules.
+  * [2fa2135d] Copy config.guess/sub and clean up after build.
+  * [0d7df15a] Adding patch to fix wrong comment syntax in example code.
+    (Closes: #536269) - thanks to Marco Túlio Gontijo e Silva
+  * [aa3f625c] Fix HostIP provider to work with latest web API (Closes:
+    #554178) - thanks to Jonny Lamb
+  * [773831aa] Use dh_quilt_* in debian/rules.
+  * [47ecb429] Bumping Standards-Version to 3.8.3, no changes needed.
+
+ -- Bernd Zeimetz <bzed@debian.org>  Tue, 03 Nov 2009 20:00:20 +0100
+
+geoclue (0.11.1-5) unstable; urgency=low
+
+  * [ff19d3bf] Fixing section override disparities.
+  * [23ddf112] Use libglib2.0-dev instead of libglib-dev. (Closes:
+    #535940) - thanks to Laurent Bigonville
+
+ -- Bernd Zeimetz <bzed@debian.org>  Mon, 06 Jul 2009 10:39:21 +0200
+
+geoclue (0.11.1-4) unstable; urgency=low
+
+  * [dcb98403] Move geoclue-test-gui into geoclue-examples. (Closes:
+    #534250) - thanks to Laurent Bigonville
+
+ -- Bernd Zeimetz <bzed@debian.org>  Tue, 23 Jun 2009 13:12:44 +0200
+
+geoclue (0.11.1-3) unstable; urgency=low
+
+  * [a95b9e89] Fixing typo in the last changelog entry.
+  * [24b3c980] Build geoclue with network-manager support. (Closes:
+    #532234) - thanks to Guillaume Desmottes
+
+ -- Bernd Zeimetz <bzed@debian.org>  Mon, 08 Jun 2009 22:45:55 +0200
+
+geoclue (0.11.1-2) unstable; urgency=low
+
+  [ Craig Andrews ]
+  * Fix warnings reported by lintian
+  * Resolve circular dependency between geoclue and libgeoclue0
+    (Closes: #520129). libgeoclue no longer depends on geoclue.
+    libgeoclue instead suggests geoclue.
+  * Changed --libexecdir to point to /usr/lib/geoclue.
+    (Closes: #518822).
+  * Use cdbs (Thanks Stefan Jenkner <stefan@jenkner.org>)
+  * Added debian/watch for update detection
+  * Thanks Bernd Zeimetz <bzed@debian.org> for the previous NMU
+    (Closes: #518586)
+  * Install examples as examples in the libgeoclue-dev package
+
+  [ Bernd Zeimetz ]
+  * Adding myself to Uploaders.
+  * Bumping Standards-Version to 3.8.1, no changes needed.
+  * Add dependency on geoclue for location providers where
+    it was missing.
+  * Raise build-dependency on libgammu-dev to >= 1.24.0 as
+    we're applying a patch which needs the API change.
+  * Update Vcs information to point to git.debian.org.
+  * Add debian/gbp.conf to make sure we use pristine-tar.
+  * Only install *.c and the Makefile as examples, not the
+    pre-built .o files and linker scripts.
+
+ -- Craig Andrews <candrews@integralblue.com>  Wed, 1 Apr 2009 15:15:15 -0600
+
+geoclue (0.11.1-1.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Adding quilt patch system and a patch to fix a FTBFS due to a changed
+    API of libgammu (Closes: #518586). Also adding debian/README.source
+    as required by policy. 
+
+ -- Bernd Zeimetz <bzed@debian.org>  Wed, 25 Mar 2009 20:20:54 +0100
+
+geoclue (0.11.1-1) unstable; urgency=low
+
+  * New upstream version (stable)
+
+ -- Craig Andrews <candrews@integralblue.com>  Tue, 11 Nov 2008 16:16:16 -0500
+
+geoclue (0.8svn20070820-1) unstable; urgency=low
+
+  * New upstream version from git
+
+ -- Jussi Kukkonen <jhkukkon@cc.hut.fi>  Mon, 20 Aug 2007 15:05:59 +0300
+
+geoclue (0.8svn20070815-1) unstable; urgency=low
+
+  * New upstream version from git
+
+ -- Jussi Kukkonen <jhkukkon@cc.hut.fi>  Wed, 15 Aug 2007 16:17:22 +0300
+
+geoclue (0.2svn20070715-1) unstable; urgency=low
+
+  * New upstream version from git
+
+ -- Jussi Kukkonen <jhkukkon@cc.hut.fi>  Sun, 15 Jul 2007 23:40:36 +0300
+
+geoclue (0.2svn20070704-1) unstable; urgency=low
+
+  * Initial release 
+
+ -- Jussi Kukkonen <jhkukkon@cc.hut.fi>  Wed, 04 Jul 2007 11:27:36 +0300
+
