@@ -4,12 +4,15 @@ Priority: optional
 Maintainer: BlankOn Developers <blankon-dev@googlegroups.com>
 XSBC-Original-Maintainer: Laurent Bigonville <bigon@debian.org>
 Uploaders: Craig Andrews <candrews@integralblue.com>
-Build-Depends: debhelper (>= 9),
-               intltool,
-               libgeoip-dev (>= 1.5.1),
+Build-Depends: autotools-dev,
+               debhelper (>= 9),
+               dh-autoreconf,
+               geoip-database,
+               intltool (>= 0.40.0),
+               libgeoip-dev,
                libglib2.0-dev (>= 2.34.0),
                libjson-glib-dev (>= 0.14),
-               libsoup2.4-dev,
+               libsoup-gnome2.4-dev,
                pkg-config
 Homepage: http://www.freedesktop.org/wiki/Software/GeoClue
 Standards-Version: 3.9.4
@@ -19,11 +22,11 @@ Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/geoclue.git
 Package: geoclue-2.0
 Architecture: any
 Depends: ${misc:Depends}, ${shlibs:Depends}
-Description: Geographic information framework
- GeoClue provides applications access to various geographical information
- sources using a D-Bus API.
+Description: geoinformation service
+ GeoClue is a D-Bus geoinformation service. The goal of the Geoclue project
+ is to make creating location-aware applications as simple as possible.
  .
- This package contains the master server for GeoClue.
+ This package contains the D-Bus system service for GeoClue.
 
 Package: geoclue-2.0-dev
 Architecture: any
