@@ -12,32 +12,23 @@ Build-Depends: autotools-dev,
                libgeoip-dev,
                libglib2.0-dev (>= 2.34.0),
                libjson-glib-dev (>= 0.14),
-               libsoup-gnome2.4-dev,
+               libmm-glib-dev (>= 1.0),
+               libnm-glib-dev (>= 0.9.8.0),
+               libsoup2.4-dev,
+               libxml2-dev (>= 2.7),
                pkg-config
 Homepage: http://www.freedesktop.org/wiki/Software/GeoClue
-Standards-Version: 3.9.4
-Vcs-Git: git://anonscm.debian.org/collab-maint/geoclue.git
-Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/geoclue.git
+Standards-Version: 3.9.5
+Vcs-Git: git://anonscm.debian.org/collab-maint/geoclue-2.0.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=collab-maint/geoclue-2.0.git
 
 Package: geoclue-2.0
 Architecture: any
-Depends: ${misc:Depends}, ${shlibs:Depends}
+Depends: ${misc:Depends}, ${shlibs:Depends}, adduser
+Breaks: geoclue (>= 2.0)
+Replaces: geoclue (>= 2.0)
 Description: geoinformation service
  GeoClue is a D-Bus geoinformation service. The goal of the Geoclue project
  is to make creating location-aware applications as simple as possible.
  .
  This package contains the D-Bus system service for GeoClue.
-
-Package: geoclue-2.0-dev
-Architecture: any
-Depends: geoclue-2.0 (= ${binary:Version}),
-         libglib2.0-dev (>= 2.34.0),
-         libjson-glib-dev (>= 0.14),
-         libsoup2.4-dev,
-         ${misc:Depends},
-         ${shlibs:Depends}
-Description: Geographic information framework (development files)
- GeoClue provides applications access to various geographical information
- sources using a D-Bus API.
- .
- This package contains the master server for GeoClue.

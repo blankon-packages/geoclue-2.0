@@ -1,14 +1,19 @@
 #!/usr/bin/make -f
 # -*- makefile -*-
 
+ifneq ($(DEB_BUILD_ARCH_OS),linux)
+  MM_NM_FLAGS := --disable-3g-source \
+                 --disable-modem-gps-source \
+                 --disable-wifi-source
+endif
+
 override_dh_auto_configure:
 	dh_auto_configure -- --libdir=/usr/lib \
-                             --libexec=/usr/lib/geoclue \
+                             --libexec=/usr/lib/geoclue-2.0 \
                              --with-dbus-service-user=geoclue \
-                             --enable-geoip-server=no
-
-override_dh_auto_install:
-	dh_auto_install --destdir=debian/tmp
+                             --enable-geoip-server=no \
+                             --with-systemdsystemunitdir=/lib/systemd/system \
+                             ${MM_NM_FLAGS}
 
 override_dh_auto_test:
 	# testsuite fails on missing latitude (et.al)
@@ -16,6 +21,12 @@ override_dh_auto_test:
 	# database, which "geoip-database" package in debian
 	# does not include.
 	dh_auto_test || true
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f $(CURDIR)/debian/geoclue-2.0/usr/share/applications/geoclue-demo-agent.desktop
+	mv $(CURDIR)/debian/geoclue-2.0/usr/share/geoclue-2.0/demos \
+		$(CURDIR)/debian/geoclue-2.0/usr/lib/geoclue-2.0/demos
 
 %:
 	dh $@ --with autotools-dev,autoreconf
